@@ -7,4 +7,29 @@ entertainmentList = ["Movie", "Board Games", "Bowling", "Hiking", "Concert", "Th
 randomDestination = random.choice(destinationList)
 randomRestaurant = random.choice(restaurantList)
 randomTransport = random.choice(transportationList)
-randomentertainment = random.choice(entertainmentList)
+randomEntertainment = random.choice(entertainmentList)
+def reselect (reroll):
+    while reroll != "destination" or reroll != "restaurant" or reroll != "transportation" or reroll != "entertainment":
+        if reroll == "destination":
+            newDestination = random.choice(destinationList)
+            print (f"Your new destination is {newDestination}!")
+            return newDestination
+        elif reroll == "restaurant":
+            newRestaurant = random.choice(restaurantList)
+            print(f"Your new restaurant choice is {newRestaurant}!")
+            return newRestaurant
+        elif reroll == "transportation":
+            newTransport = random.choice(transportationList)
+            print(f"Your new form of transportation is {newTransport}!")
+            return newTransport
+        elif reroll == "entertainment":
+            newEntertainment = random.choice(entertainmentList)
+            print(f"Your new entertainment choice is {newEntertainment}!")
+            return newEntertainment
+        else:
+            reroll = input("Incorrect input, please try again! ")
+            reroll.casefold()
+
+
+
+
