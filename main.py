@@ -62,6 +62,9 @@ willReroll = input("""If one or more of these options does not appeal to you, yo
 Would you like to reroll any of these options? Please enter yes or no. """)
 print ("")
 willReroll = incorrectYesNoReturn(willReroll)
+if willReroll == "no":
+    print (f"We hope you enjoy your trip!")
+
 while willReroll == "yes":
     reselectChoice = input("Which option would you like to reroll? ")
     reselectChoice = incorrectInputReturn (reselectChoice)
@@ -82,18 +85,12 @@ while willReroll == "yes":
     print(f"Your new {reselectChoice} selection is {newChoice}!")
     willReroll = input("Would you like to reroll another option? ")
     print ("")
-    willReroll = willReroll.casefold()
+    willReroll = incorrectYesNoReturn(willReroll)
     if willReroll == "no":
         print(f"""For your NEW randomly selected day trip, you will:
     Visit the beautiful {randomDestination},
     dine at the lovely {randomRestaurant},
     and finally, take the {randomTransport}
-    to enjoy {randomEntertainment} for the evening!""")
+    to enjoy {randomEntertainment} for the evening!
+    We hope you enjoy your trip!""")
     print("")
-    dayComplete = input(" Does that look correct? Type 'yes' to confirm or 'no' to go back and change something. ")
-    dayComplete = incorrectYesNoReturn(dayComplete)
-    while dayComplete != "yes":
-        willReroll = incorrectYesNoReturn (willReroll)
-
-    if dayComplete == "yes":
-        print ("Your trip is complete!")
