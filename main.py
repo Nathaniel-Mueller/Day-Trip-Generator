@@ -5,6 +5,7 @@ destinationList = ["Greece", "Sweden", "Germany", "Australia", "Japan", "Italy"]
 restaurantList = ["Applebees", "Olive Garden", "Red Lobster",  "LG's Prime Steakhouse", ]
 transportationList = ["bus", "train", "monorail"]
 entertainmentList = ["a movie", "board games", "bowling", "a concert", "a theater play"]
+optionsList = ["destination", "restaurant", "transportation", "entertainment"]
 randomDestination = random.choice(destinationList)
 randomRestaurant = random.choice(restaurantList)
 randomTransport = random.choice(transportationList)
@@ -22,10 +23,10 @@ def incorrectYesNoReturn (inputStr):
     return output
 def incorrectInputReturn (inputStr):
     inputStr = inputStr.casefold()
-    if inputStr == "destination" or inputStr == "restaurant" or inputStr == "transportation" or inputStr == "entertainment":
+    if inputStr in optionsList:
         pass
     else:
-        while inputStr != "destination" and inputStr != "restaurant" and inputStr != "transportation" and inputStr != "entertainment":
+        while inputStr not in optionsList:
             inputStr = input("I'm sorry that's an incorrect input, please try again! ")
             inputStr = inputStr.casefold()
     output = inputStr
